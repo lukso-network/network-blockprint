@@ -4,19 +4,16 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-# Install dependencies
 RUN pip install --no-cache-dir --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip list -v
 
 COPY . .
 
 RUN python3 build_db.py --db-path /app/block_db.sqlite --classify-dir testdata --data-dir /app/data/mainnet/training/slots_1_to_4102000
+RUN ls -l /app
 
 EXPOSE 8000
 
-# Set the working directory to where the start script is located
 WORKDIR /app/scripts
 
-# Start the application
 ENTRYPOINT ["./start_server.sh"]
