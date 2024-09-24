@@ -16,4 +16,4 @@ EXPOSE 8000
 
 WORKDIR /app/scripts
 
-ENTRYPOINT ["./start_server.sh"]
+ENTRYPOINT ["./start_server_docker.sh"]
