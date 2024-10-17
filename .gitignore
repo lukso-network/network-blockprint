@@ -1,4 +1,3 @@
-*.json
 !tests/data/*
 !tests/data_proc/*/*
 *.pdf

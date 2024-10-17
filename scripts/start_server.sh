@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 cd ..
-source ./venv/bin/activate
-gunicorn --timeout 1800 api_server:app
+source ./vevn/bin/activate
+gunicorn --bind 0.0.0.0:8000 api_server 
