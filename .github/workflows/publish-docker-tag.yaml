@@ -7,8 +7,8 @@ on:
 
 env:
   DOCKER_REGISTRY: europe-docker.pkg.dev
-  DOCKER_IMAGE_SERVER_NAME: lks-lz-artifacts/docker-clientdiversity/blockprint-server
-  DOCKER_IMAGE_BACKGROUND_NAME: lks-lz-artifacts/docker-clientdiversity/blockprint-background
+  DOCKER_IMAGE_SERVER_NAME: lks-lz-artifacts/docker-network-clientdiversity-website/blockprint-server
+  DOCKER_IMAGE_BACKGROUND_NAME: lks-lz-artifacts/docker-network-clientdiversity-website/blockprint-background
     
 jobs:
   build-docker:
