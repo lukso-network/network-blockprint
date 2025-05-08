@@ -30,6 +30,9 @@ REGEX = {
 
 
 def check_graffiti(graffiti: str, disabled_clients=[]) -> str:
+    if graffiti == "":
+        return "Prysm"
+
     for client, regexes in REGEX.items():
         if client in disabled_clients:
             continue

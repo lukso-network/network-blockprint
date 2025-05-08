@@ -9,11 +9,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN python3 build_db.py --db-path /app/block_db.sqlite --classify-dir testdata --data-dir /app/data/mainnet/training/slots_1_to_4102000
-RUN ls -l /app
-
 EXPOSE 8000
 
 WORKDIR /app/scripts
+
+ENV BLOCK_DB="/db/block_db.sqlite"
 
 ENTRYPOINT ["./start_server_docker.sh"]

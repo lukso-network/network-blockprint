@@ -1,0 +1,18 @@
+services:
+  server:
+    build: 
+      context: .
+      dockerfile: Dockerfile.server
+    volumes:
+      - ./db/block_db.sqlite:/db/block_db.sqlite
+    network_mode: host
+
+  background:
+    build: 
+      context: .
+      dockerfile: Dockerfile.background
+    volumes:
+      - ./db/block_db.sqlite:/db/block_db.sqlite
+    environment:
+      - DISABLE_DB_BUILD=false
+    network_mode: host
