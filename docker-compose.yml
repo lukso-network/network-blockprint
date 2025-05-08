@@ -2,9 +2,10 @@ services:
   db-init:
     build: 
       context: .
-      dockerfile: Dockerfile.db
+      dockerfile: Dockerfile.db-init
     volumes:
       - ./db/block_db.sqlite:/db/block_db.sqlite
+      - ./data:/data
 
     network_mode: host
   server:
@@ -16,6 +17,7 @@ services:
         condition: service_completed_successfully
     volumes:
       - ./db/block_db.sqlite:/db/block_db.sqlite
+      - ./data:/data
     network_mode: host
 
   background:
@@ -27,4 +29,5 @@ services:
         condition: service_completed_successfully
     volumes:
       - ./db/block_db.sqlite:/db/block_db.sqlite
+      - ./data:/data
     network_mode: host

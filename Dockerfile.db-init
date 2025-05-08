@@ -15,4 +15,4 @@ WORKDIR /app/scripts
 ENV BLOCK_DB="/db/block_db.sqlite"
 ENV DATA_DIR="/data/mainnet/training"
 
-ENTRYPOINT ["./create_data_directory"]
+ENTRYPOINT ["./create_data_directory.sh"]
