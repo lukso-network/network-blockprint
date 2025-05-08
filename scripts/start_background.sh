@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-if $DISABLE_DB_BUILD; then
-  echo "DB build disabled: continuing"
-else 
-  ./create_data_directory.sh
-fi
-
 cd ..
 source ./venv/bin/activate
 

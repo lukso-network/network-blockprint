@@ -10,3 +10,4 @@ __pycache__/
 *.pkl
 *.zst
 .ipynb_checkpoints
+build

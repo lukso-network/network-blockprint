@@ -25,7 +25,7 @@ from classifier import (
 __main__.Classifier = Classifier
 
 
-DATA_DIR = "./data/mainnet/training"
+DATA_DIR = os.environ.get("DATA_DIR") or "/data/mainnet/training"
 BLOCK_DB = os.environ.get("BLOCK_DB") or "./block_db.sqlite"
 BN_URL = "http://localhost:5052"
 SELF_URL = "http://localhost:8000"
