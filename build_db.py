@@ -182,7 +182,7 @@ def get_sync_gaps(block_db):
         prior_slot = get_greatest_prior_block_slot(block_db, parent_slot)
 
         if prior_slot is None:
-            start_slot = 0
+            start_slot = 1
         else:
             start_slot = prior_slot + 1
         end_slot = block_slot - 1

@@ -93,6 +93,9 @@ def download_block_reward_batches(
 
 
 def download_block_rewards(start_slot, end_slot, beacon_node=BEACON_NODE):
+    if start_slot == 0:
+        start_slot = 1
+
     url = f"{beacon_node}/lighthouse/analysis/block_rewards?start_slot={start_slot}&end_slot={end_slot}&include_attestations=true"  # noqa: E501
     res = requests.get(url)
     res.raise_for_status()
